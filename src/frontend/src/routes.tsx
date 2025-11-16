@@ -46,6 +46,10 @@ const PlaygroundPage = lazy(() => import("./pages/Playground"));
 
 const SignUp = lazy(() => import("./pages/SignUpPage"));
 
+const ChatbotView = lazy(() => import("./pages/ChatbotView"));
+
+const FramerGeneratorView = lazy(() => import("./pages/FramerGeneratorView"));
+
 const router = createBrowserRouter(
   createRoutesFromElements([
     <Route path="/playground/:id/">
@@ -153,7 +157,9 @@ const router = createBrowserRouter(
                   <Route path="messages" element={<MessagesPage />} />
                   {CustomRoutesStore()}
                 </Route>
-                {CustomRoutesStorePages()}
+                {CustomRoutesStorePages()}                <Route path="chatbot" element={<ChatbotView />} />
+                <Route path="framer-generator" element={<FramerGeneratorView />} />
+
                 <Route path="account">
                   <Route path="delete" element={<DeleteAccountPage />}></Route>
                 </Route>
